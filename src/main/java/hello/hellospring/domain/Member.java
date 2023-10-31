@@ -1,5 +1,6 @@
 package hello.hellospring.domain;
 
+//기본 유저객체
 public class Member {
     private Long id; //임의의  값. 시스템이 저장하는 값.
     private String name; //유저 이름
