@@ -1,10 +1,13 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
 //실제 인터페이스를 implements하여 함수 내용 구현.
+
+//@Repository
 public class MemoryMemberRepository implements MemberRepository {
 
     //MemoryMemberRepository 는 데이터에 접근하고 관리하는 로직만을 담당.
