@@ -7,18 +7,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 public class JdbcMemberRepository implements MemberRepository {
-    private final DataSource dataSource;
+    private final DataSource dataSource; //디비에 붙일려면 필요함.
     public JdbcMemberRepository(DataSource dataSource) {
         this.dataSource = dataSource;
+        //주입?
     }
     @Override
     public Member save(Member member) {
         String sql = "insert into member(name) values(?)";
         Connection conn = null;
         PreparedStatement pstmt = null;
-        ResultSet rs = null;
+        ResultSet rs = null; // 결과를 받음
         try {
-            conn = getConnection();
+            conn = getConnection(); //디비와의 커넥션
             pstmt = conn.prepareStatement(sql,
                     Statement.RETURN_GENERATED_KEYS);
             pstmt.setString(1, member.getName());

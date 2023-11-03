@@ -5,13 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomeController {
-
-    @GetMapping("/") //그냥 도메인
+    @GetMapping("/") //그냥 기본 도메인
     public String home() {
         return "home";
     }
-
-
-
-
 }
